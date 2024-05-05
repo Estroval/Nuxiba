@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    int contac = Convert.ToInt32(ViewData["cont"]);
+}
+
+
+<div id="Tabla_I">
+
+    <form id="I_D" action="Empleado" method="post" class="">
+        <br />
+        <br />
+
+        <p></p>
+
+        <p>
+            Numero de empleado:
+            <input type="text" class="control" name="ID" placeholder="" value="">
+        <p />
+
+        <p>
+            Nombre:
+            <input type="text" class="control" name="Nombre_E" placeholder="" value="">
+        <p />
+
+        <p>
+            Apellido Paterno:
+            <input type="text" class="control" name="Ape_P" placeholder="" value="">
+        <p />
+
+        <p>
+            Apellido Materno:
+            <input type="text" class="control" name="Ape_M" placeholder="" value="">
+        <p />
+
+        <p>
+            Area
+            <input type="text" class="control" name="Area_E" placeholder="" value="">
+        </p>
+
+        <p>
+            Fecha de nacimiento:
+            <input type="text" class="control" name="Fe_N" placeholder="" value="">
+        </p>
+
+        <p>
+            Sueldo:
+            <input type="text" class="control" name="Sueldo_E" placeholder="" value="">
+        </p>
+
+        <div />
+
+        <br />
+
+        <button class="btn btn-primary" type="submit" action="Empleado">
+            Actualizar
+        </button>
+
+        <button class="btn btn-primary" type="submit" action="Empleado" name="AgregarB" value="1">
+            Guardar
+        </button>
+
+        <button class="btn btn-primary" type="submit" action="Empleado" name="BorrarB" value="2">
+            Borrar
+        </button>
+
+        <button class="btn btn-primary" type="submit" action="Empleado" name="CambioB" value="3">
+            Cambio
+        </button>
+
+
+        <div />
+
+
+    </form>
+    @*------------------------------------------Tabla donde se muestran los datos -----------------------------------------------------------------------------------------------------*@
+    <br />
+    <br />
+
+    <table id="Tabla_Datos">
+        <tr>
+            <th>Numero de empleado</th>
+
+            <th>Nombre</th>
+
+            <th>Apellido Paterno</th>
+
+            <th>Apellido Materno</th>
+
+            <th>Area</th>
+
+            <th>Fecha de Nacimiento</th>
+
+            <th>Sueldo</th>
+
+
+        </tr>
+
+
+        @{
+            contac = contac + 1;
+            for (var i = 0; i < contac; i++)
+            {
+
+
+                <tr>
+
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["ID"+i]"></td>
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["Nombre_EC"+i]"></td>
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["Ape_AC"+i]"></td>
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["Ape_MC"+i]"></td>
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["Area_EC"+i]"></td>
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["Fe_NC"+i]"></td>
+
+                    <td> <input type="text" class="form-control" name="usu_admi" placeholder="" autofocus value="@ViewData["Sueldo_EC"+i]"></td>
+
+
+
+
+
+
+
+                </tr>
+            }
+        }
+
+
+    </table>
+
+</div>
